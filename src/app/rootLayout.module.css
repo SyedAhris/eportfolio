@@ -1,12 +1,14 @@
 .body{
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
 .rootLayout{
+    display: flex;
+    flex-flow: column;
     width: inherit;
-    height: 100vh;
+    height: 100%;
     background: #EDF6F9;
     margin: 0;
 }
