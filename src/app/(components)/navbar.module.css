@@ -1,0 +1,68 @@
+.navbarLayout{
+    display: flex;
+    width: inherit;
+    padding: 25px 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name{
+    color: #113537;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.8px;
+    text-decoration: none;
+
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+}
+
+.name:hover{
+    transform: scale(1.2);
+}
+
+.links{
+    display: flex;
+    /*width: 582px;*/
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex-shrink: 0;
+}
+
+.link{
+    text-decoration: none;
+    color: #113537;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+}
+
+.link:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.github{
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+}
+
+.github:hover{
+    color: #113537;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.activeLink{
+    font-weight: 800;
+}
