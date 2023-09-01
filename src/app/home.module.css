@@ -1,0 +1,9 @@
+.layout{
+    display: flex;
+    align-items: stretch;
+}
+
+.img{
+    border-radius: 50%;
+    background-color: #113537;
+}

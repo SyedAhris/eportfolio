@@ -1,5 +1,12 @@
+.body{
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
 .rootLayout{
     width: inherit;
     height: 100vh;
     background: #EDF6F9;
+    margin: 0;
 }
