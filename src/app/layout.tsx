@@ -1,6 +1,5 @@
 import Navbar from "@/app/(components)/navbar";
 import styles from './rootLayout.module.css'
-import { Sacramento } from "next/dist/compiled/@next/font/dist/google";
 import Head from "next/head";
 
 //@ts-ignore

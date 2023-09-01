@@ -1,7 +1,6 @@
 import styles from './navbar.module.css'
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { headers} from "next/headers";
 import { Sacramento, Montserrat } from "next/font/google";
 
@@ -14,7 +13,7 @@ export default function Navbar () {
     // const currentPath  = usePathname();
     const headerList = headers();
     const currentPath = headerList.get('x-invoke-path');
-
+    //@ts-ignore
     return (
         <div className={styles.navbarLayout}>
             <div>
