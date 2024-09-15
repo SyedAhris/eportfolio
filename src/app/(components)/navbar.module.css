@@ -1,7 +1,6 @@
 .navbarLayout{
     display: flex;
     width: inherit;
-    padding: 25px 25px;
     justify-content: space-between;
     align-items: center;
 }

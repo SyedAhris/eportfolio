@@ -1,5 +1,15 @@
-.rootLayout{
-    width: inherit;
-    height: 100vh;
+.body{
+    margin: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 25px 25px;
     background: #EDF6F9;
+}
+
+.rootLayout{
+    display: flex;
+    flex-flow: column;
+    width: inherit;
+    height: 100%;
+    margin: 0;
 }
