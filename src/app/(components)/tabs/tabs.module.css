@@ -1,0 +1,61 @@
+.tabsContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: #f2f8fb;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tab:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+/* Specific Icon Styles */
+
+/* UI Design Icon */
+.uiDesignIcon {
+    background-color: #6a4c93; /* Purple background */
+    color: #fff; /* White icon color */
+}
+
+/* Web Dev Icon */
+.webDevIcon {
+    background-color: #d32f2f; /* Red background */
+    color: #fff; /* White icon color */
+}
+
+/* Mobile Dev Icon */
+.mobileDevIcon {
+    background-color: #ff6f00; /* Orange background */
+    color: #fff; /* White icon color */
+}
+
+/* AI / ML Icon */
+.aiMlIcon {
+    background-color: #00796b; /* Teal background */
+    color: #fff; /* White icon color */
+}

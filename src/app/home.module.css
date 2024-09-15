@@ -1,13 +1,98 @@
-.layout{
+/* Main Layout */
+.rootLayout {
     display: flex;
-    padding: 0px 90px;
-    justify-content: space-between;
-    align-items: center;
-
-    height: inherit;
+    flex-direction: column;
 }
 
-.img{
+.padding {
+    padding: 80px;
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 25px;
+}
+
+.layoutBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Description Section */
+.descriptionBox {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.helloBox h1 {
+    color: #113537;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.descriptionPrint {
+    color: #113537;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.descriptionOther {
+    color: #113537;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+/* Image Section */
+.imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
     border-radius: 50%;
     background-color: #113537;
+    width: 258px;
+    height: 258px;
+    object-fit: cover;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .layoutBox {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .descriptionBox {
+        align-items: center;
+    }
+
+    .imageContainer {
+        margin-top: 20px;
+    }
 }
