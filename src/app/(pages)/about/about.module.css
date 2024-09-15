@@ -1,0 +1,132 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #113537; /* Primary color */
+    font-weight: 600;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: 40px; /* Adjust for spacing */
+    padding-left: 40px; /* Additional padding for circles */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px; /* Center the line between the icon and content */
+    top: 0;
+    bottom: 0;
+    width: 4px; /* Line width */
+    background: linear-gradient(to bottom, #113537, #2c5f5d); /* Gradient effect with a similar color */
+    border-radius: 10px; /* Rounded line for smoothness */
+    z-index: 0;
+}
+
+.timelineItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px; /* Spacing between items */
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start position */
+    animation: fadeInUp 0.8s ease forwards; /* Animation when loaded */
+    animation-delay: calc(var(--delay) * 0.5s); /* Stagger effect */
+    --delay: 1; /* Delay variable for each item */
+}
+
+.timelineItem:nth-child(2) {
+    --delay: 2;
+}
+
+.timelineItem:nth-child(3) {
+    --delay: 3;
+}
+
+.timelineItem:nth-child(4) {
+    --delay: 4;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.circle {
+    position: absolute;
+    left: 12px; /* Position circle on line */
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff; /* White background for contrast */
+    border: 4px solid #113537; /* Same color as line */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.iconContainer {
+    background-color: #ffffff; /* White background */
+    color: #113537; /* Primary icon color */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #113537; /* Same color for border */
+    margin-right: 20px;
+    flex-shrink: 0;
+    z-index: 1;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effects */
+}
+
+.iconContainer:hover {
+    background-color: #113537; /* Invert colors on hover */
+    color: #ffffff; /* Inverted color */
+}
+
+.content {
+    background-color: #f2f4f3; /* Light background color for content */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    transition: box-shadow 0.3s ease; /* Transition for hover effect */
+}
+
+.content:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Hover effect for content */
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #113537; /* Primary color */
+    font-weight: 600;
+}
+
+.year {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #2c5f5d; /* Secondary color */
+}
+
+.description {
+    font-size: 1rem;
+    color: #3b4f4e; /* Text color */
+    margin: 0;
+}
