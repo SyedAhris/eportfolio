@@ -1,6 +1,6 @@
 import styles from './about.module.css';
 import {Montserrat, Sacramento} from 'next/font/google';
-import {FaBriefcase, FaGraduationCap, FaSchool, FaUniversity} from 'react-icons/fa';
+import {FaBriefcase, FaBookOpen, FaSchool, FaUniversity} from 'react-icons/fa';
 
 // Load Montserrat font using next/font/google
 const montserrat = Montserrat({
@@ -13,26 +13,32 @@ const sacramento = Sacramento({weight: ['400'], subsets: ['latin']})
 // Milestones Data
 const milestones = [
     {
-        year: '2010-2014',
-        title: 'High School',
-        description: 'Studied at XYZ High School, where I developed a strong foundation in science and mathematics.',
+        year: '2006-2017',
+        title: 'Habib Public School',
+        description: 'Completed O-Levels with 1 A*, 4 As and 5 Bs.',
         icon: <FaSchool/>,
     },
     {
-        year: '2014-2018',
-        title: 'Undergraduate Degree',
-        description: 'Completed my Bachelor’s in Computer Science at ABC University. Participated in coding competitions and research projects.',
+        year: '2017-2019',
+        title: 'Cordoba School For A\'Levels',
+        description: 'Completed A-Levels with 1 A, 1 B and 2 Cs',
+        icon: <FaSchool/>,
+    },
+    {
+        year: '2019-2023',
+        title: 'Institute of Business Administration - Karachi',
+        description: 'Completed Bachelors in Computer Science with a CGPA of 3.49. Learned all the basics of programming and software development, as well as some advanced topics like deep learning and design patterns.',
         icon: <FaUniversity/>,
     },
     {
-        year: '2018-2020',
-        title: 'Master’s Degree',
-        description: 'Pursued a Master’s in Software Engineering at DEF College, focusing on AI and Machine Learning.',
-        icon: <FaGraduationCap/>,
+        year: 'Summer 2022',
+        title: 'AI Apprenticeship at Folio3',
+        description: 'Worked on a demo project to generate Urdu handwritten letters using a Generative Adversarial Network (GAN) with a team of four in a collaborative office environment under tight deadlines. Managed the entire project pipeline from data collection and preprocessing to model creation, evaluation, and deployment. Utilized technologies like Google Colab, Git, DVC, TensorFlow, PyTorch, FastAPI, and Docker. The project serves as a proof of concept for automated data creation and advances the field of AI-generated handwriting.',
+        icon: <FaBookOpen/>,
     },
     {
-        year: '2020-Present',
-        title: 'Software Engineer at GHI Corp',
+        year: '2023 Nov -Present',
+        title: 'Junior Software Engineer at Sofstica Solutions',
         description: 'Working as a Full-Stack Developer, building scalable web applications and leading a team of junior developers.',
         icon: <FaBriefcase/>,
     },
