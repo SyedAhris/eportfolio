@@ -56,6 +56,10 @@
     --delay: 4;
 }
 
+.timelineItem:nth-child(5) {
+    --delay: 5;
+}
+
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -99,11 +103,11 @@
 .content {
     background-color: #f2f4f3; /* Light background color for content */
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 1200px;
     transition: box-shadow 0.3s ease; /* Transition for hover effect */
 }
 
@@ -112,7 +116,7 @@
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 5px;
     color: #113537; /* Primary color */
     font-weight: 600;
@@ -126,7 +130,7 @@
 }
 
 .description {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #3b4f4e; /* Text color */
     margin: 0;
 }
