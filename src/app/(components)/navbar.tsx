@@ -1,7 +1,8 @@
+"use client";
 import styles from './navbar.module.css'
 import Image from "next/image";
 import Link from "next/link";
-import { headers} from "next/headers";
+import { usePathname } from "next/navigation";
 import { Sacramento, Montserrat } from "next/font/google";
 
 // @ts-ignore
@@ -10,9 +11,9 @@ const montserrat  = Montserrat({weight:['400'],subsets: ['latin']})
 export default function Navbar () {
 
     // const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
-    // const currentPath  = usePathname();
-    const headerList = headers();
-    const currentPath = headerList.get('x-invoke-path');
+    const currentPath  = usePathname();
+    // const headerList = headers();
+    // const currentPath = headerList.get('x-invoke-path');
     //@ts-ignore
     return (
         <div className={styles.navbarLayout}>
