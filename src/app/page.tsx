@@ -14,16 +14,22 @@ export default function Home() {
                     {/* Description Section */}
                     <div className={`${robotoMono.className} ${styles.descriptionBox}`}>
                         <div className={styles.helloBox}>
-                            <h1>Hello,</h1>
-                            <h1>I'm Syed Ahris</h1>
+                            <h1>
+                                <span className={`${styles.typewriter} ${styles.helloPrimary}`}>Hello,</span>
+                            </h1>
+                            <h1>
+                                <span className={`${styles.typewriter} ${styles.helloSecondary}`}>I'm Syed Ahris</span>
+                            </h1>
                         </div>
                         <div className={styles.description}>
-                            <p className={styles.descriptionPrint}>print('Expanding Horizons')</p>
-                            <p className={styles.descriptionOther}>
-                                # A simple <b>spirit</b> expanding <b>horizons</b> through
+                            <p className={styles.descriptionPrint}>
+                                <span className={`${styles.typewriter} ${styles.descriptionPrimary}`}>print('Expanding Horizons')</span>
                             </p>
                             <p className={styles.descriptionOther}>
-                                # <b>curiosity</b>, <b>innovation</b>, and the art of <b>coding</b>.
+                                <span className={`${styles.typewriter} ${styles.descriptionSecondary}`}># A simple <b>spirit</b> expanding <b>horizons</b> through</span>
+                            </p>
+                            <p className={styles.descriptionOther}>
+                                <span className={`${styles.typewriter} ${styles.descriptionTertiary}`}># <b>curiosity</b>, <b>innovation</b>, and the art of <b>coding</b>.</span>
                             </p>
                         </div>
                     </div>

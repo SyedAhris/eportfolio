@@ -59,6 +59,83 @@
     margin-bottom: 5px;
 }
 
+/* Typewriter Animation */
+.typewriter {
+    --typing-duration: 2s;
+    --typing-delay: 0s;
+    --typing-steps: 20;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #113537;
+    width: 0;
+    animation: typing var(--typing-duration) steps(var(--typing-steps)) forwards, blink 0.75s step-end infinite;
+    animation-delay: var(--typing-delay), calc(var(--typing-delay) + var(--typing-duration));
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards, none;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #113537;
+    }
+}
+
+.helloPrimary {
+    --typing-duration: 1.2s;
+    --typing-delay: 0s;
+    --typing-steps: 6;
+}
+
+.helloSecondary {
+    --typing-duration: 1.6s;
+    --typing-delay: 1.3s;
+    --typing-steps: 14;
+}
+
+.descriptionPrimary {
+    --typing-duration: 2.1s;
+    --typing-delay: 3s;
+    --typing-steps: 27;
+}
+
+.descriptionSecondary {
+    --typing-duration: 2.4s;
+    --typing-delay: 5.3s;
+    --typing-steps: 44;
+}
+
+.descriptionTertiary {
+    --typing-duration: 2.6s;
+    --typing-delay: 7.9s;
+    --typing-steps: 47;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typewriter {
+        width: auto;
+        border-right: none;
+        white-space: normal;
+        animation: none;
+    }
+}
+
 /* Image Section */
 .imageContainer {
     display: flex;
@@ -94,5 +171,12 @@
 
     .imageContainer {
         margin-top: 20px;
+    }
+
+    .typewriter {
+        width: auto;
+        border-right: none;
+        white-space: normal;
+        animation: none;
     }
 }
