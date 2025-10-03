@@ -1,36 +1,88 @@
 "use client";
-import styles from './navbar.module.css'
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Sacramento, Montserrat } from "next/font/google";
 
-// @ts-ignore
-const sacramento = Sacramento({weight:['400'],subsets: ['latin']})
-const montserrat  = Montserrat({weight:['400'],subsets: ['latin']})
-export default function Navbar () {
+import { useEffect, useState, type MouseEvent } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Sacramento, Montserrat } from 'next/font/google';
+import styles from './navbar.module.css';
 
-    // const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
-    const currentPath  = usePathname();
-    // const headerList = headers();
-    // const currentPath = headerList.get('x-invoke-path');
-    //@ts-ignore
+const sacramento = Sacramento({ weight: ['400'], subsets: ['latin'] });
+const montserrat = Montserrat({ weight: ['400', '600'], subsets: ['latin'] });
+
+const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Me' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact Me' },
+];
+
+const Navbar = () => {
+    const [activeSection, setActiveSection] = useState('home');
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            {
+                threshold: 0.35,
+                rootMargin: '-20% 0px -40% 0px',
+            }
+        );
+
+        navItems.forEach(({ id }) => {
+            const section = document.getElementById(id);
+            if (section) {
+                observer.observe(section);
+            }
+        });
+
+        return () => {
+            navItems.forEach(({ id }) => {
+                const section = document.getElementById(id);
+                if (section) {
+                    observer.unobserve(section);
+                }
+            });
+            observer.disconnect();
+        };
+    }, []);
+
+    const handleNavClick = (id: string) => (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+        event.preventDefault();
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setActiveSection(id);
+        }
+    };
+
     return (
-        <div className={styles.navbarLayout}>
-            <div>
-                <Link className={`${styles.name} ${sacramento.className}`} href="/">Syed Ahris</Link>
-            </div>
+        <nav className={styles.navbarLayout}>
+            <button type="button" className={`${styles.name} ${sacramento.className}`} onClick={handleNavClick('home')}>
+                Syed Ahris
+            </button>
             <div className={styles.links}>
-                <Link className={`${currentPath === '/' ? styles.activeLink : ''} ${styles.link} ${montserrat.className}`} href="/">Home</Link>
-                <Link className={`${currentPath === '/about' ? styles.activeLink : ''} ${styles.link} ${montserrat.className}`} href="/about">About Me</Link>
-                <Link className={`${currentPath === '/projects' ? styles.activeLink : ''} ${styles.link} ${montserrat.className}`} href="/projects">Projects</Link>
-                <Link className={`${currentPath === '/contact' ? styles.activeLink : ''} ${styles.link} ${montserrat.className}`} href="/contact">Contact Me</Link>
+                {navItems.map((item) => (
+                    <button
+                        key={item.id}
+                        type="button"
+                        className={`${styles.link} ${montserrat.className} ${activeSection === item.id ? styles.activeLink : ''}`}
+                        onClick={handleNavClick(item.id)}
+                    >
+                        {item.label}
+                    </button>
+                ))}
             </div>
-            <div>
-                <Link href='https://www.github.com/SyedAhris' target='_blank'>
-                        <Image className={styles.github} src={'github.svg'} alt={'Github account link'} width={42} height={42}/>
-                </Link>
-            </div>
-        </div>
-    )
-}
+            <Link href="https://www.github.com/SyedAhris" target="_blank">
+                <Image className={styles.github} src="github.svg" alt="Github account link" width={42} height={42} />
+            </Link>
+        </nav>
+    );
+};
+
+export default Navbar;

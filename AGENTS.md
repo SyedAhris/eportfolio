@@ -1,30 +1,34 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `src/app` hosts the Next.js App Router; `page.tsx` renders the landing page and pulls shared styles from `home.module.css`.
-- `src/app/(components)` stores reusable UI such as `navbar.tsx` and `tabs/tabs.tsx`, each paired with a CSS module for scoped styling.
-- `src/app/(pages)` holds route groups (`about`, `contact`, `projects`) with per-page modules; share layout scaffolding via `layout.tsx` and `rootLayout.module.css`.
-- `public` contains static assets like `profilepic.png`; add new media here and reference with `/asset-name` paths.
-- `src/app/globals.css` sets design tokens; prefer module-level styles for component-specific rules.
+- Next.js App Router lives under `src/app`; the landing page is `src/app/page.tsx` with shared styles in `home.module.css`.
+- Reusable UI sits in `src/app/(components)`; pair each component (e.g., `navbar.tsx`) with its CSS module.
+- Route groups reside in `src/app/(pages)` for `about`, `contact`, and `projects`; reuse scaffolding via `layout.tsx` and `rootLayout.module.css`.
+- Global tokens live in `src/app/globals.css`; static assets belong in `public` and should be referenced with `/asset-name` paths.
+- Add new media or config files near their peers and prefer `@/` imports for anything under `src`.
 
 ## Build, Test, and Development Commands
-- `npm run dev` launches the Next.js dev server with hot reload on http://localhost:3000.
-- `npm run build` creates an optimized production bundle; run before deployment.
-- `npm run start` serves the built app locally to validate production output.
-- `npm run lint` runs ESLint with the Next.js config; fix or document any warnings before committing.
+- `npm run dev` — start the Next.js dev server at http://localhost:3000 with hot reload.
+- `npm run build` — generate the production bundle; run before deploying or sharing PRs.
+- `npm run start` — serve the built bundle locally to validate production behavior.
+- `npm run lint` — execute ESLint using the Next.js ruleset; resolve or document all warnings.
 
 ## Coding Style & Naming Conventions
-- Write TypeScript React function components with 4-space indentation and import ordering matching existing files.
-- Use PascalCase for components (`Tabs`), camelCase for hooks and variables, and kebab-case for directories unless Next.js enforces route naming.
-- Keep CSS modules named `*.module.css` and class selectors camelCase; co-locate module files with their components.
-- Favor absolute imports via the `@/` alias for paths under `src`.
+- Author TypeScript React function components using 4-space indentation and match existing import ordering.
+- Components use PascalCase, hooks and variables use camelCase, and directories stay kebab-case unless driven by route names.
+- Scope styles with `*.module.css`; keep class selectors camelCase such as `.heroWrapper`.
+- Favor absolute imports via `@/` instead of deeply nested relatives.
 
 ## Testing Guidelines
-- Automated tests are not yet configured; until added, verify changes with `npm run lint` and manual page checks in dev mode.
-- When introducing tests, follow the `__tests__` + `.test.tsx` pattern and target critical UI flows; document coverage expectations in your PR.
+- Automated tests are not yet configured; rely on `npm run lint` and manual page verification in dev mode.
+- When introducing tests, follow the `__tests__/component.test.tsx` pattern and document coverage expectations within the PR.
 
 ## Commit & Pull Request Guidelines
-- Follow the existing convention of concise, imperative subjects (e.g., `fix(nav): align active state` or `Fix: adjust hero spacing`).
-- Group related changes per commit; avoid bundling lint fixes with feature work.
-- Pull requests should summarize the user-facing impact, list testing evidence, and link relevant issues; include screenshots or GIFs for visual changes.
-- Request review once CI (`npm run lint`/`npm run build`) passes and note any follow-up tasks in the description.
+- Write concise, imperative commit subjects (e.g., `fix(nav): align active state`).
+- Group related changes together; avoid bundling lint-only fixes with feature work.
+- PRs should note user-facing impact, list validation (`npm run lint`, `npm run build`), and include UI screenshots or GIFs when relevant.
+- Link related issues and call out follow-up tasks directly in the description.
+
+## Security & Configuration Tips
+- Keep secrets out of source control; use environment variables in `.env.local` (gitignored) for sensitive values.
+- Vet new dependencies before adding them and run `npm audit` after upgrades.

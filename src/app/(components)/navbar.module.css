@@ -1,11 +1,20 @@
-.navbarLayout{
+.navbarLayout {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
-    width: inherit;
     justify-content: space-between;
     align-items: center;
+    padding: 20px clamp(20px, 6vw, 40px);
+    margin: 0 -25px;
+    background: rgba(237, 246, 249, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(17, 53, 55, 0.08);
 }
 
-.name{
+.name {
+    background: none;
+    border: none;
     color: #113537;
     font-size: 40px;
     font-style: normal;
@@ -13,55 +22,84 @@
     line-height: normal;
     letter-spacing: 2.8px;
     text-decoration: none;
-
-    -webkit-transition-property: all;
-    -webkit-transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.name:hover{
-    transform: scale(1.2);
+.name:hover {
+    transform: scale(1.08);
 }
 
-.links{
+.links {
     display: flex;
-    /*width: 582px;*/
     justify-content: space-between;
     align-items: center;
-    gap: 50px;
-    flex-shrink: 0;
+    gap: 36px;
 }
 
-.link{
+.link {
+    background: none;
+    border: none;
     text-decoration: none;
     color: #113537;
     font-size: 15px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
-
-    -webkit-transition-property: all;
-    -webkit-transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease;
-}
-
-.link:hover{
+    letter-spacing: 0.08em;
+    padding: 6px 0;
     cursor: pointer;
-    transform: scale(1.2);
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.github{
-    -webkit-transition-property: all;
-    -webkit-transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease;
+.name:focus-visible,
+.link:focus-visible {
+    outline: 2px solid #113537;
+    outline-offset: 3px;
 }
 
-.github:hover{
-    color: #113537;
+.link:hover {
+    transform: translateY(-2px);
+    color: #0b292b;
+}
+
+.github {
+    transition: transform 0.3s ease;
+}
+
+.github:hover {
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
-.activeLink{
-    font-weight: 800;
+.activeLink {
+    font-weight: 700;
+    position: relative;
+}
+
+.activeLink::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: #113537;
+}
+
+@media (max-width: 900px) {
+    .links {
+        gap: 24px;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 720px) {
+    .navbarLayout {
+        display: none;
+    }
 }

@@ -2,6 +2,7 @@
     width: min(100%, 1400px);
     margin: 0 auto;
     padding: 80px clamp(24px, 6vw, 120px) 100px;
+    scroll-margin-top: 120px;
 }
 
 .heading {
@@ -41,13 +42,13 @@
     animation-delay: calc(var(--index) * 0.15s);
 }
 
-.timelineItem.left {
+.timelineItemLeft {
     left: 0;
     text-align: right;
     padding-right: clamp(24px, 2.5vw, 48px);
 }
 
-.timelineItem.right {
+.timelineItemRight {
     left: 50%;
     text-align: left;
     padding-left: clamp(24px, 2.5vw, 48px);
@@ -64,12 +65,12 @@
     max-width: 640px;
 }
 
-.timelineItem.left .card {
+.timelineItemLeft .card {
     margin-left: auto;
     margin-right: clamp(0px, 1vw, 16px);
 }
 
-.timelineItem.right .card {
+.timelineItemRight .card {
     margin-left: clamp(0px, 1vw, 16px);
     margin-right: auto;
 }
@@ -107,11 +108,11 @@
     gap: 10px;
 }
 
-.timelineItem.left .highlights {
+.timelineItemLeft .highlights {
     justify-content: flex-end;
 }
 
-.timelineItem.right .highlights {
+.timelineItemRight .highlights {
     justify-content: flex-start;
 }
 
@@ -142,11 +143,11 @@
     z-index: 2;
 }
 
-.timelineItem.left .marker {
+.timelineItemLeft .marker {
     right: -26px;
 }
 
-.timelineItem.right .marker {
+.timelineItemRight .marker {
     left: -26px;
 }
 

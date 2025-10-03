@@ -1,39 +1,46 @@
-import Image from "next/image";
+import AboutSection from '@/app/(components)/sections/about-section';
+import ContactSection from '@/app/(components)/sections/contact-section';
+import ProjectsSection from '@/app/(components)/sections/projects-section';
+import { Roboto_Mono } from 'next/font/google';
+import Image from 'next/image';
 import styles from './home.module.css';
-import {Roboto_Mono} from "next/font/google";
-import Tabs from "@/app/(components)/tabs/tabs";
 
-const robotoMono = Roboto_Mono({weight: ['400'], subsets: ['latin']});
+const robotoMono = Roboto_Mono({ weight: ['400'], subsets: ['latin'] });
 
-export default function Home() {
+const Home = () => {
     return (
-        <div className={styles.rootLayout}>
-            <div className={styles.padding}/>
-            <div className={styles.layout}>
-                <div className={styles.layoutBox}>
-                    {/* Description Section */}
+        <main className={styles.rootLayout}>
+            <section id="home" className={styles.heroSection}>
+                <div className={styles.heroContent}>
                     <div className={`${robotoMono.className} ${styles.descriptionBox}`}>
                         <div className={styles.helloBox}>
                             <h1>
                                 <span className={`${styles.typewriter} ${styles.helloPrimary}`}>Hello,</span>
                             </h1>
                             <h1>
-                                <span className={`${styles.typewriter} ${styles.helloSecondary}`}>I'm Syed Ahris</span>
+                                <span className={`${styles.typewriter} ${styles.helloSecondary}`}>
+                                    I&apos;m Syed Ahris
+                                </span>
                             </h1>
                         </div>
                         <div className={styles.description}>
                             <p className={styles.descriptionPrint}>
-                                <span className={`${styles.typewriter} ${styles.descriptionPrimary}`}>print('Expanding Horizons')</span>
+                                <span className={`${styles.typewriter} ${styles.descriptionPrimary}`}>
+                                    print(&apos;Expanding Horizons&apos;)
+                                </span>
                             </p>
                             <p className={styles.descriptionOther}>
-                                <span className={`${styles.typewriter} ${styles.descriptionSecondary}`}># A simple <b>spirit</b> expanding <b>horizons</b> through</span>
+                                <span className={`${styles.typewriter} ${styles.descriptionSecondary}`}>
+                                    # A simple <b>spirit</b> expanding <b>horizons</b> through
+                                </span>
                             </p>
                             <p className={styles.descriptionOther}>
-                                <span className={`${styles.typewriter} ${styles.descriptionTertiary}`}># <b>curiosity</b>, <b>innovation</b>, and the art of <b>coding</b>.</span>
+                                <span className={`${styles.typewriter} ${styles.descriptionTertiary}`}>
+                                    # <b>curiosity</b>, <b>innovation</b>, and the art of <b>coding</b>.
+                                </span>
                             </p>
                         </div>
                     </div>
-                    {/* Profile Picture Section */}
                     <div className={styles.imageContainer}>
                         <Image
                             className={styles.img}
@@ -44,11 +51,15 @@ export default function Home() {
                         />
                     </div>
                 </div>
-            </div>
-            <div className={styles.padding}/>
-            <div className={styles.tabs}>
-                <Tabs/>
-            </div>
-        </div>
+                <div className={styles.tabsWrapper}>
+                    {/* <Tabs /> */}
+                </div>
+            </section>
+            <AboutSection />
+            <ProjectsSection />
+            <ContactSection />
+        </main>
     );
-}
+};
+
+export default Home;

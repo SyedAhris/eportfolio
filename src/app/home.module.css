@@ -1,39 +1,35 @@
-/* Main Layout */
 .rootLayout {
     display: flex;
     flex-direction: column;
+    gap: 60px;
 }
 
-.padding {
-    padding: 80px;
-}
-
-.layout {
+.heroSection {
+    position: relative;
+    padding: 140px clamp(24px, 6vw, 120px) 100px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 0 25px;
+    flex-direction: column;
+    gap: 60px;
+    scroll-margin-top: 120px;
 }
 
-.layoutBox {
+.heroContent {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
+    align-items: center;
+    gap: clamp(32px, 6vw, 80px);
+    flex-wrap: wrap;
 }
 
-/* Description Section */
 .descriptionBox {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: clamp(320px, 50vw, 540px);
 }
 
 .helloBox h1 {
     color: #113537;
-    font-size: 32px;
+    font-size: clamp(32px, 5vw, 48px);
     font-weight: 500;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -46,7 +42,7 @@
 
 .descriptionPrint {
     color: #113537;
-    font-size: 20px;
+    font-size: clamp(18px, 3vw, 22px);
     font-weight: 500;
     letter-spacing: 1.5px;
     margin-bottom: 10px;
@@ -55,14 +51,13 @@
 
 .descriptionOther {
     color: #113537;
-    font-size: 18px;
+    font-size: clamp(16px, 2.6vw, 20px);
     font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: 5px;
     display: inline-block;
 }
 
-/* Typewriter Animation */
 .typewriter {
     --typing-duration: 2s;
     --typing-delay: 0s;
@@ -128,7 +123,6 @@
     }
 }
 
-/* Image Section */
 .imageContainer {
     display: flex;
     align-items: center;
@@ -138,36 +132,42 @@
 .img {
     border-radius: 50%;
     background-color: #113537;
-    width: 258px;
-    height: 258px;
+    width: clamp(220px, 28vw, 280px);
+    height: clamp(220px, 28vw, 280px);
     object-fit: cover;
 }
 
-.tabs {
+.tabsWrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .layoutBox {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+@media (max-width: 900px) {
+    .heroSection {
+        padding-top: 120px;
+    }
+
+    .heroContent {
+        justify-content: center;
     }
 
     .descriptionBox {
         align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .heroSection {
+        padding: 100px 20px 80px;
     }
 
-    .imageContainer {
-        margin-top: 20px;
+    .heroContent {
+        gap: 32px;
     }
 
     .typewriter {
         width: auto;
-        border-right: none;
         white-space: normal;
         animation: none;
     }
