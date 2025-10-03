@@ -1,14 +1,14 @@
 .section {
     padding: 80px clamp(24px, 6vw, 120px);
-    background: #f5fbfb;
     scroll-margin-top: 120px;
 }
 
 .heading {
-    font-size: 2.4rem;
+    font-size: 2.75rem;
     color: #113537;
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 56px;
+    font-weight: 600;
 }
 
 .grid {
@@ -84,6 +84,6 @@
     }
 
     .heading {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 }

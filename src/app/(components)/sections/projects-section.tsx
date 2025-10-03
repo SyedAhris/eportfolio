@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Sacramento } from 'next/font/google';
 import styles from './projects-section.module.css';
 import { FaArrowRight } from 'react-icons/fa';
 
 const montserrat = Montserrat({ weight: ['400', '600'], subsets: ['latin'] });
+const sacramento = Sacramento({ weight: ['400'], subsets: ['latin'] });
 
 const projects = [
     {
@@ -29,7 +30,7 @@ const projects = [
 const ProjectsSection = () => {
     return (
         <section id="projects" className={`${styles.section} ${montserrat.className}`}>
-            <h2 className={styles.heading}>Projects</h2>
+            <h2 className={`${styles.heading} ${sacramento.className}`}>Projects</h2>
             <div className={styles.grid}>
                 {projects.map((project) => (
                     <article key={project.name} className={styles.card}>
