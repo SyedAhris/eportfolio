@@ -72,21 +72,6 @@
     transform: scale(1.1);
 }
 
-.activeLink {
-    font-weight: 700;
-    position: relative;
-}
-
-.activeLink::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -6px;
-    height: 2px;
-    background: #113537;
-}
-
 @media (max-width: 900px) {
     .links {
         gap: 24px;

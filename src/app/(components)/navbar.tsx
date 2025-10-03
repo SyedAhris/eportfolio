@@ -1,6 +1,4 @@
 "use client";
-
-import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sacramento, Montserrat } from 'next/font/google';
@@ -17,52 +15,8 @@ const navItems = [
 ];
 
 const Navbar = () => {
-    const [activeSection, setActiveSection] = useState('home');
-    const navbarRef = useRef<HTMLElement | null>(null);
-    const navHeightRef = useRef(0);
-
-    useEffect(() => {
-        const updateNavHeight = () => {
-            navHeightRef.current = navbarRef.current?.offsetHeight ?? 0;
-        };
-        updateNavHeight();
-        window.addEventListener('resize', updateNavHeight);
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            {
-                threshold: 0.4,
-                rootMargin: `-${navHeightRef.current}px 0px -45% 0px`,
-            }
-        );
-
-        navItems.forEach(({ id }) => {
-            const section = document.getElementById(id);
-            if (section) {
-                observer.observe(section);
-            }
-        });
-
-        return () => {
-            window.removeEventListener('resize', updateNavHeight);
-            navItems.forEach(({ id }) => {
-                const section = document.getElementById(id);
-                if (section) {
-                    observer.unobserve(section);
-                }
-            });
-            observer.disconnect();
-        };
-    }, []);
-
     return (
-        <nav ref={navbarRef} className={styles.navbarLayout}>
+        <nav className={styles.navbarLayout}>
             <a href="#home" className={`${styles.name} ${sacramento.className}`}>
                 Syed Ahris
             </a>
@@ -71,7 +25,7 @@ const Navbar = () => {
                     <a
                         key={item.id}
                         href={`#${item.id}`}
-                        className={`${styles.link} ${montserrat.className} ${activeSection === item.id ? styles.activeLink : ''}`}
+                        className={`${styles.link} ${montserrat.className}`}
                     >
                         {item.label}
                     </a>
