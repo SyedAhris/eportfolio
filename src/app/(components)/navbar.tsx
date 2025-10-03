@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type MouseEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sacramento, Montserrat } from 'next/font/google';
@@ -18,8 +18,16 @@ const navItems = [
 
 const Navbar = () => {
     const [activeSection, setActiveSection] = useState('home');
+    const navbarRef = useRef<HTMLElement | null>(null);
+    const navHeightRef = useRef(0);
 
     useEffect(() => {
+        const updateNavHeight = () => {
+            navHeightRef.current = navbarRef.current?.offsetHeight ?? 0;
+        };
+        updateNavHeight();
+        window.addEventListener('resize', updateNavHeight);
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -29,8 +37,8 @@ const Navbar = () => {
                 });
             },
             {
-                threshold: 0.35,
-                rootMargin: '-20% 0px -40% 0px',
+                threshold: 0.4,
+                rootMargin: `-${navHeightRef.current}px 0px -45% 0px`,
             }
         );
 
@@ -42,6 +50,7 @@ const Navbar = () => {
         });
 
         return () => {
+            window.removeEventListener('resize', updateNavHeight);
             navItems.forEach(({ id }) => {
                 const section = document.getElementById(id);
                 if (section) {
@@ -52,30 +61,20 @@ const Navbar = () => {
         };
     }, []);
 
-    const handleNavClick = (id: string) => (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
-        event.preventDefault();
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setActiveSection(id);
-        }
-    };
-
     return (
-        <nav className={styles.navbarLayout}>
-            <button type="button" className={`${styles.name} ${sacramento.className}`} onClick={handleNavClick('home')}>
+        <nav ref={navbarRef} className={styles.navbarLayout}>
+            <a href="#home" className={`${styles.name} ${sacramento.className}`}>
                 Syed Ahris
-            </button>
+            </a>
             <div className={styles.links}>
                 {navItems.map((item) => (
-                    <button
+                    <a
                         key={item.id}
-                        type="button"
+                        href={`#${item.id}`}
                         className={`${styles.link} ${montserrat.className} ${activeSection === item.id ? styles.activeLink : ''}`}
-                        onClick={handleNavClick(item.id)}
                     >
                         {item.label}
-                    </button>
+                    </a>
                 ))}
             </div>
             <Link href="https://www.github.com/SyedAhris" target="_blank">

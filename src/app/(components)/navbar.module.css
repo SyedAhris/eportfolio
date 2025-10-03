@@ -5,8 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px clamp(20px, 6vw, 40px);
-    margin: 0 -25px;
+    padding: 20px clamp(20px, 6vw, 60px);
     background: rgba(237, 246, 249, 0.9);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(17, 53, 55, 0.08);
@@ -99,7 +98,7 @@
 }
 
 @media (max-width: 720px) {
-    .navbarLayout {
+    .links {
         display: none;
     }
 }
