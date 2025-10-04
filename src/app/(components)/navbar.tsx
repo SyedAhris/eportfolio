@@ -9,7 +9,7 @@ const montserrat = Montserrat({ weight: ['400', '600'], subsets: ['latin'] });
 
 const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Me' },
+    { id: 'about', label: 'My Journey' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact Me' },
 ];
