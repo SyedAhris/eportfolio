@@ -117,12 +117,12 @@
 }
 
 .highlight {
-    background: #113537;
-    color: #ffffff;
+    background: rgba(1, 150, 131, 0.1);
+    color: #019683;
     padding: 6px 12px;
     border-radius: 999px;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.03em;
     white-space: normal;
     word-break: break-word;
@@ -134,12 +134,12 @@
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background: #113537;
+    background: #019683;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 16px 34px rgba(17, 53, 55, 0.22);
+    box-shadow: 0 16px 34px rgba(57, 224, 121, 0.22);
     z-index: 2;
 }
 

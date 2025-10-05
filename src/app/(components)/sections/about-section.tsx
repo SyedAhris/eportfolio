@@ -1,7 +1,7 @@
-import type { CSSProperties } from 'react';
-import styles from './about-section.module.css';
 import { Montserrat, Sacramento } from 'next/font/google';
-import { FaBriefcase, FaBookOpen, FaSchool, FaUniversity } from 'react-icons/fa';
+import type { CSSProperties } from 'react';
+import { FaBookOpen, FaBriefcase, FaSchool, FaUniversity } from 'react-icons/fa';
+import styles from './about-section.module.css';
 
 const montserrat = Montserrat({
     weight: ['400', '600'],
@@ -15,35 +15,35 @@ const milestones = [
         year: '2006-2017',
         title: 'Habib Public School',
         subtitle: 'O-Levels',
-        highlights: ['1 A*, 4 As, 5 Bs', 'Science society lead'],
+        highlights: ['1 A*, 4 As, 5 Bs'],
         icon: <FaSchool />,
     },
     {
         year: '2017-2019',
         title: 'Cordoba School for A Levels',
         subtitle: 'A-Levels',
-        highlights: ['1 A, 1 B, 2 Cs', 'STEM mentor'],
+        highlights: ['1 A, 1 B, 2 Cs'],
         icon: <FaSchool />,
     },
     {
         year: '2019-2023',
         title: 'IBA Karachi',
         subtitle: 'BS Computer Science',
-        highlights: ['CGPA 3.49', 'Deep learning studio'],
+        highlights: ['CGPA 3.49'],
         icon: <FaUniversity />,
     },
     {
         year: 'Summer 2022',
         title: 'Folio3 AI Apprenticeship',
         subtitle: 'ML Research Sprint',
-        highlights: ['Urdu GAN demo', 'End-to-end pipeline'],
+        highlights: ['Generative Adversarial Networks', 'PyTorch', 'FastAPI', 'DVC', 'git', 'Docker', 'React'],
         icon: <FaBookOpen />,
     },
     {
         year: '2023 Nov - Present',
         title: 'Sofstica Solutions',
         subtitle: 'Junior Software Engineer',
-        highlights: ['Full-stack launches', 'Mentor junior devs'],
+        highlights: ['Java Springboot', 'Python FastAPI', 'Docker', 'Redis', 'AWS', 'rabbit mq', 'Node.js Express', 'Github Actions'],
         icon: <FaBriefcase />,
     },
 ];
