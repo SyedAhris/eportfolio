@@ -5,7 +5,6 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const montserrat = Montserrat({ weight: ['400', '600'], subsets: ['latin'] });
 const sacramento = Sacramento({ weight: ['400'], subsets: ['latin'] });
-
 const projects = [
     {
         name: 'Portfolio Platform',

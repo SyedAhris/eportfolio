@@ -35,7 +35,7 @@ const milestones = [
     {
         year: 'Summer 2022',
         title: 'Folio3 AI Apprenticeship',
-        subtitle: 'ML Research Sprint',
+        subtitle: 'Machine Learning and Deep Learning',
         highlights: ['Generative Adversarial Networks', 'PyTorch', 'FastAPI', 'DVC', 'git', 'Docker', 'React'],
         icon: <FaBookOpen />,
     },
