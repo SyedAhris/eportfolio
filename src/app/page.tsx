@@ -41,7 +41,12 @@ const Home = () => {
                             </p>
                         </div>
                         <div className={styles.ctaWrapper}>
-                            <a className={styles.resumeButton} href="/resume.pdf" download>
+                            <a
+                                className={styles.resumeButton}
+                                href="https://drive.google.com/file/d/1tT2ulY5IhMTCV5KV8s1A_UxRS1wiwsGV/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <span>Download Resume</span>
                                 <svg
                                     className={styles.resumeIcon}
