@@ -46,7 +46,7 @@ const Home = () => {
                             <div className={styles.bubblePrimary}>
                                 <Image
                                     className={styles.profileImage}
-                                    src="/profilepic.png"
+                                    src="/profilepic_v2.png"
                                     alt="Creator's profile picture"
                                     width={258}
                                     height={258}

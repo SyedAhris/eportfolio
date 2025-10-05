@@ -144,11 +144,10 @@
 
 .bubblePrimary {
     position: absolute;
-    inset: 12%;
+    inset: 0;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.45), transparent 55%),
-        radial-gradient(circle at 70% 78%, rgba(0, 0, 0, 0.18), transparent 65%),
-        var(--bubble-primary-bg);
+    background: radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.35), transparent 55%),
+        radial-gradient(circle at 70% 78%, rgba(0, 0, 0, 0.2), transparent 70%), var(--bubble-primary-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,8 +159,8 @@
 }
 
 .profileImage {
-    width: 92%;
-    height: 92%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 16px 26px rgba(17, 53, 55, 0.28);
@@ -180,9 +179,9 @@
 }
 
 .bubbleAccentOne {
-    top: -12%;
-    right: -6%;
-    width: 44%;
+    top: -16%;
+    right: -10%;
+    width: 48%;
     aspect-ratio: 1;
     background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.55), transparent 65%),
         var(--bubble-accent-one);
@@ -191,9 +190,9 @@
 }
 
 .bubbleAccentTwo {
-    bottom: -10%;
-    left: -4%;
-    width: 36%;
+    bottom: -18%;
+    left: -16%;
+    width: 44%;
     aspect-ratio: 1;
     background: radial-gradient(circle at 40% 28%, rgba(255, 255, 255, 0.5), transparent 70%),
         var(--bubble-accent-two);
@@ -203,9 +202,9 @@
 }
 
 .bubbleAccentThree {
-    top: 48%;
-    right: 54%;
-    width: 22%;
+    top: 58%;
+    right: 66%;
+    width: 26%;
     aspect-ratio: 1;
     background: radial-gradient(circle at 40% 25%, rgba(255, 255, 255, 0.6), transparent 70%),
         var(--bubble-accent-three);
@@ -215,9 +214,9 @@
 }
 
 .bubbleAccentFour {
-    top: -18%;
-    left: 22%;
-    width: 30%;
+    top: -12%;
+    left: 18%;
+    width: 32%;
     aspect-ratio: 1;
     background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.55), transparent 68%),
         var(--bubble-accent-four);
@@ -227,9 +226,9 @@
 }
 
 .bubbleAccentFive {
-    bottom: 12%;
-    right: -18%;
-    width: 26%;
+    bottom: 16%;
+    right: -22%;
+    width: 32%;
     aspect-ratio: 1;
     background: radial-gradient(circle at 42% 32%, rgba(255, 255, 255, 0.5), transparent 72%),
         var(--bubble-accent-five);
