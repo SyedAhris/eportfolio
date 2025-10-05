@@ -31,9 +31,14 @@ const Navbar = () => {
                     </a>
                 ))}
             </div>
-            <Link href="https://www.github.com/SyedAhris" target="_blank">
-                <Image className={styles.github} src="github.svg" alt="Github account link" width={42} height={42} />
-            </Link>
+            <div className={styles.socialLinks}>
+                <Link href="https://www.linkedin.com/in/SyedAhris" target="_blank" aria-label="LinkedIn profile">
+                    <Image className={styles.socialIcon} src="linkedin.svg" alt="LinkedIn account link" width={40} height={40} />
+                </Link>
+                <Link href="https://www.github.com/SyedAhris" target="_blank" aria-label="GitHub profile">
+                    <Image className={styles.socialIcon} src="github.svg" alt="GitHub account link" width={42} height={42} />
+                </Link>
+            </div>
         </nav>
     );
 };

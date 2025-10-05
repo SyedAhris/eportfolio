@@ -63,11 +63,19 @@
     color: #0b292b;
 }
 
-.github {
+.socialLinks {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.socialIcon {
+    width: 42px;
+    height: 42px;
     transition: transform 0.3s ease;
 }
 
-.github:hover {
+.socialIcon:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
