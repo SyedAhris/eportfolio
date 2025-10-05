@@ -42,13 +42,22 @@ const Home = () => {
                         </div>
                     </div>
                     <div className={styles.imageContainer}>
-                        <Image
-                            className={styles.img}
-                            src="/profilepic.png"
-                            alt="Creator's profile picture"
-                            width={258}
-                            height={258}
-                        />
+                        <div className={styles.bubbleCluster}>
+                            <div className={styles.bubblePrimary}>
+                                <Image
+                                    className={styles.profileImage}
+                                    src="/profilepic.png"
+                                    alt="Creator's profile picture"
+                                    width={258}
+                                    height={258}
+                                />
+                            </div>
+                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentOne}`} />
+                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentTwo}`} />
+                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentThree}`} />
+                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentFour}`} />
+                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentFive}`} />
+                        </div>
                     </div>
                 </div>
                 <div className={styles.tabsWrapper}>
