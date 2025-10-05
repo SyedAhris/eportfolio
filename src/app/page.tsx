@@ -40,6 +40,28 @@ const Home = () => {
                                 </span>
                             </p>
                         </div>
+                        <div className={styles.ctaWrapper}>
+                            <a className={styles.resumeButton} href="/resume.pdf" download>
+                                <span>Download Resume</span>
+                                <svg
+                                    className={styles.resumeIcon}
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M6 20H18M12 4V16M12 16L8 12M12 16L16 12"
+                                        stroke="currentColor"
+                                        strokeWidth="1.8"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <div className={styles.imageContainer}>
                         <div className={styles.bubbleCluster}>
