@@ -392,7 +392,7 @@
 
 @media (max-width: 900px) {
     .heroSection {
-        padding-top: 56px;
+        padding-top: 36px;
     }
 
     .heroContent {
@@ -421,7 +421,7 @@
 
 @media (max-width: 600px) {
     .heroSection {
-        padding: 56px 18px 48px;
+        padding: 26px 18px 48px;
     }
 
     .heroContent {
