@@ -27,21 +27,31 @@
     max-width: clamp(320px, 50vw, 540px);
 }
 
-.helloBox h1 {
-    color: #113537;
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 500;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-
 .helloBox {
     display: flex;
     flex-direction: column;
     gap: 6px;
     min-height: clamp(92px, 11vw, 128px);
     justify-content: flex-start;
+}
+
+.heroTitle {
+    color: #113537;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.heroTagline {
+    color: #0f2f31;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    max-width: clamp(320px, 48vw, 580px);
 }
 
 .description {
@@ -51,6 +61,34 @@
     gap: 8px;
     align-items: flex-start;
     min-height: clamp(150px, 22vh, 180px);
+}
+
+.heroSummary {
+    margin-top: 16px;
+    color: #315b5b;
+    font-size: clamp(15px, 2vw, 18px);
+    line-height: 1.6;
+    max-width: clamp(320px, 52vw, 600px);
+}
+
+.heroKeywords {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.heroKeyword {
+    background: rgba(1, 150, 131, 0.12);
+    color: #0f2f31;
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 12px rgba(1, 150, 131, 0.08);
 }
 
 .ctaWrapper {
