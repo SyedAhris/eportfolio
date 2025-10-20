@@ -3,9 +3,52 @@ import ContactSection from '@/app/(components)/sections/contact-section';
 import ProjectsSection from '@/app/(components)/sections/projects-section';
 import { Roboto_Mono } from 'next/font/google';
 import Image from 'next/image';
+import Script from 'next/script';
 import styles from './home.module.css';
 
 const robotoMono = Roboto_Mono({ weight: ['400'], subsets: ['latin'] });
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://syedahris.dev';
+
+const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Syed Ahris',
+    url: siteUrl,
+    image: `${siteUrl}/profilepic_v2.png`,
+    jobTitle: 'Software Engineer',
+    worksFor: {
+        '@type': 'Organization',
+        name: 'Sofstica Solutions',
+    },
+    alumniOf: [
+        {
+            '@type': 'CollegeOrUniversity',
+            name: 'IBA Karachi',
+            sameAs: 'https://www.iba.edu.pk',
+        },
+    ],
+    email: 'mailto:syed@ahris.dev',
+    sameAs: [
+        'https://www.linkedin.com/in/SyedAhris',
+        'https://github.com/SyedAhris',
+    ],
+    address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Karachi',
+        addressRegion: 'Sindh',
+        addressCountry: 'PK',
+    },
+    knowsAbout: [
+        'Full Stack Development',
+        'Next.js',
+        'TypeScript',
+        'Machine Learning',
+        'Cloud Infrastructure',
+        'Product Strategy',
+    ],
+    nationality: 'Pakistani',
+};
 
 const Home = () => {
     return (
@@ -14,14 +57,18 @@ const Home = () => {
                 <div className={styles.heroContent}>
                     <div className={`${robotoMono.className} ${styles.descriptionBox}`}>
                         <div className={styles.helloBox}>
-                            <h1>
-                                <span className={`${styles.typewriter} ${styles.helloPrimary}`}>Hello,</span>
-                            </h1>
-                            <h1>
+                            <h1 className={styles.heroTitle}>
+                                <span className={`${styles.typewriter} ${styles.helloPrimary}`}>
+                                    Hello,
+                                </span>
                                 <span className={`${styles.typewriter} ${styles.helloSecondary}`}>
                                     I&apos;m Syed Ahris
                                 </span>
                             </h1>
+                            {/* <p className={styles.heroTagline}>
+                                Software engineer building resilient platforms, machine learning prototypes, and
+                                delightful product experiences.
+                            </p> */}
                         </div>
                         <div className={styles.description}>
                             <p className={styles.descriptionPrint}>
@@ -40,6 +87,18 @@ const Home = () => {
                                 </span>
                             </p>
                         </div>
+                        {/* <p className={styles.heroSummary}>
+                            Syed Ahris is a Karachi-based software engineer who blends Next.js, TypeScript,
+                            and machine learning to deliver reliable web applications, automation, and
+                            human-centered product experimentation.
+                        </p>
+                        <ul className={styles.heroKeywords}>
+                            <li className={styles.heroKeyword}>Next.js &amp; React</li>
+                            <li className={styles.heroKeyword}>TypeScript &amp; Node.js</li>
+                            <li className={styles.heroKeyword}>Machine Learning</li>
+                            <li className={styles.heroKeyword}>Cloud &amp; DevOps</li>
+                            <li className={styles.heroKeyword}>Product Innovation</li>
+                        </ul> */}
                         <div className={styles.ctaWrapper}>
                             <a
                                 className={styles.resumeButton}
@@ -94,6 +153,9 @@ const Home = () => {
             <AboutSection />
             <ProjectsSection />
             <ContactSection />
+            <Script id="person-jsonld" type="application/ld+json" strategy="afterInteractive">
+                {JSON.stringify(personJsonLd)}
+            </Script>
         </main>
     );
 };
