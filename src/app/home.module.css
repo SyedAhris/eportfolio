@@ -275,6 +275,9 @@
         var(--bubble-accent-one);
     animation-name: bubbleOrbitOne;
     animation-duration: 9s;
+    --eyes-size: clamp(20px, 38%, 36px);
+    --eyes-top: 48%;
+    --eyes-left: 46%;
 }
 
 .bubbleAccentTwo {
@@ -287,6 +290,9 @@
     animation-name: bubbleOrbitTwo;
     animation-duration: 7s;
     animation-delay: 1.5s;
+    --eyes-size: clamp(20px, 34%, 34px);
+    --eyes-top: 52%;
+    --eyes-left: 54%;
 }
 
 .bubbleAccentThree {
@@ -299,6 +305,9 @@
     animation-name: bubbleOrbitThree;
     animation-duration: 6s;
     animation-delay: 0.8s;
+    --eyes-size: clamp(16px, 48%, 22px);
+    --eyes-top: 50%;
+    --eyes-left: 48%;
 }
 
 .bubbleAccentFour {
@@ -311,6 +320,9 @@
     animation-name: bubbleOrbitFour;
     animation-duration: 10s;
     animation-delay: 2.4s;
+    --eyes-size: clamp(18px, 40%, 28px);
+    --eyes-top: 46%;
+    --eyes-left: 50%;
 }
 
 .bubbleAccentFive {
@@ -323,6 +335,9 @@
     animation-name: bubbleOrbitFive;
     animation-duration: 8s;
     animation-delay: 3.2s;
+    --eyes-size: clamp(18px, 36%, 28px);
+    --eyes-top: 48%;
+    --eyes-left: 48%;
 }
 
 @keyframes bubblePulse {

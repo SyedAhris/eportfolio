@@ -1,6 +1,7 @@
 import AboutSection from '@/app/(components)/sections/about-section';
 import ContactSection from '@/app/(components)/sections/contact-section';
 import ProjectsSection from '@/app/(components)/sections/projects-section';
+import Eyes from '@/app/(components)/eyes';
 import { Roboto_Mono } from 'next/font/google';
 import Image from 'next/image';
 import Script from 'next/script';
@@ -138,11 +139,21 @@ const Home = () => {
                                     height={258}
                                 />
                             </div>
-                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentOne}`} />
-                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentTwo}`} />
-                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentThree}`} />
-                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentFour}`} />
-                            <span className={`${styles.bubbleAccent} ${styles.bubbleAccentFive}`} />
+                            <div className={`${styles.bubbleAccent} ${styles.bubbleAccentOne}`}>
+                                <Eyes />
+                            </div>
+                            <div className={`${styles.bubbleAccent} ${styles.bubbleAccentTwo}`}>
+                                <Eyes />
+                            </div>
+                            <div className={`${styles.bubbleAccent} ${styles.bubbleAccentThree}`}>
+                                <Eyes />
+                            </div>
+                            <div className={`${styles.bubbleAccent} ${styles.bubbleAccentFour}`}>
+                                <Eyes />
+                            </div>
+                            <div className={`${styles.bubbleAccent} ${styles.bubbleAccentFive}`}>
+                                <Eyes />
+                            </div>
                         </div>
                     </div>
                 </div>
