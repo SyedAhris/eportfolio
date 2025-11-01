@@ -28,6 +28,10 @@ const sacramento = Sacramento({ weight: ['400'], subsets: ['latin'] });
 const projects: Project[] = [
     {
         name: 'Urdu Character Generation Model (GAN-based)',
+        employer: {
+            name: 'Folio3 AI',
+            url: 'https://www.folio3.ai/',
+        },
         summaryPreview: (
             <p>
                 Developed a Generative Adversarial Network (GAN) capable of synthesizing handwritten Urdu letters from
@@ -87,19 +91,42 @@ const projects: Project[] = [
         tags: ['Java', 'Springboot', 'Quartz', 'Apache POI', 'AWS S3'],
     },
     {
-        name: 'Startup Launchpad',
+        name: 'RRT Copilot',
         employer: {
-            name: 'Independent Project',
+            name: 'Sofstica Solutions',
+            url: 'https://www.sofstica.com/',
         },
         summaryPreview: (
             <p>
-                Full-stack toolkit that automates landing page creation, drip newsletters, and product onboarding for
-                early-stage founders.
+                Strengthened the AI-driven backend powering proactive patient monitoring—enabling real-time insights,
+                intelligent alerts, and nurse collaboration to prevent ICU transfers—while optimizing data pipelines,
+                enhancing LangGraph agents, and ensuring secure, high-availability deployments.
             </p>
         ),
-        tags: ['React', 'Node.js', 'Automation'],
-        repo: 'https://github.com/SyedAhris',
-    },
+        highlights: [
+            <>
+                Developed a secure <b>real-time chat module</b> connecting all hospital staff to collaborate and discuss patient
+                conditions efficiently.
+            </>,
+            <>
+                Led discussions and research on <b>end-to-end encryption</b> implementation, defining a plan for secure
+                communication across the hospital network.
+            </>,
+            <>
+                Enhanced the existing <b>LangGraph agent</b> to deliver deeper patient insights and actionable alerts by
+                adding rate limits, exponential backoff retries, and <b>prompt versioning</b>.
+            </>,
+            <>
+                Integrated <b>Langfuse monitoring</b> for observability and introduced the “Talk to Patient Data” feature
+                enabling AI-assisted conversations using <b>RAG pipelines with real-time data and vector embeddings</b>.
+            </>,
+            <>
+                Owned the complete <b>deployment pipeline</b> for the service using Docker, GitHub Actions, and EC2 instances.
+            </>,
+        ],
+        tags: ['Healthcare', 'AI Copilot', 'LangGraph', 'RAG', 'DevOps'],
+    }
+
 ];
 
 const toModalId = (name: string) => `project-modal-${name.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`;
