@@ -43,6 +43,106 @@
     line-height: 1.6;
 }
 
+.summary :is(p, ul, ol) {
+    margin: 0;
+}
+
+.summary > :not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.summaryPreview {
+    position: relative;
+}
+
+.summary ul,
+.summary ol {
+    padding-left: 1.2rem;
+}
+
+.summary li {
+    margin-bottom: 0.4rem;
+}
+
+.summary li:last-child {
+    margin-bottom: 0;
+}
+
+.expandable {
+    margin-top: 0.4rem;
+    border-radius: 12px;
+    border: 1px solid #dbe7e6;
+    background: linear-gradient(135deg, #f7fffe 0%, #edf6f5 100%);
+    padding: 0 16px 12px;
+    overflow: hidden;
+}
+
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #1b4c4b;
+    cursor: pointer;
+    padding: 12px 0;
+    list-style: none;
+}
+
+.toggle::-webkit-details-marker {
+    display: none;
+}
+
+.toggle::marker {
+    content: '';
+}
+
+.toggleIcon {
+    transition: transform 0.2s ease;
+}
+
+.closedLabel,
+.openLabel {
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+}
+
+.openLabel {
+    display: none;
+}
+
+.expandable[open] .openLabel {
+    display: inline;
+}
+
+.expandable[open] .closedLabel {
+    display: none;
+}
+
+.expandable[open] .toggleIcon {
+    transform: rotate(180deg);
+}
+
+.moreContent {
+    margin-top: 0.75rem;
+}
+
+.moreContent :is(p, ul, ol) {
+    margin: 0;
+}
+
+.moreContent ul,
+.moreContent ol {
+    padding-left: 1.2rem;
+}
+
+.moreContent li {
+    margin-bottom: 0.4rem;
+}
+
+.moreContent li:last-child {
+    margin-bottom: 0;
+}
+
 .tags {
     display: flex;
     flex-wrap: wrap;

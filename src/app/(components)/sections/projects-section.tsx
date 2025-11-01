@@ -1,26 +1,52 @@
 import { Montserrat, Sacramento } from 'next/font/google';
 import Link from 'next/link';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaChevronDown } from 'react-icons/fa';
 import styles from './projects-section.module.css';
+
+type Project = {
+    name: string;
+    summaryPreview: string;
+    summaryDetails?: string;
+    tags: string[];
+    repo?: string;
+};
 
 const montserrat = Montserrat({ weight: ['400', '600'], subsets: ['latin'] });
 const sacramento = Sacramento({ weight: ['400'], subsets: ['latin'] });
-const projects = [
+const projects: Project[] = [
     {
         name: 'Urdu Character Generation Model (GAN-based)',
-        summary: 'Developed a Generative Adversarial Network (GAN) capable of synthesizing handwritten Urdu letters from the MNIST dataset structure. The model generates realistic characters based on input categories, combining deep learning with natural script complexity. \nBuilt an API layer using FastAPI for model inference and a React frontend for visual interaction, allowing users to select a letter and instantly view AI-generated samples.',
-        tags: ['PyTorch', 'Generative Adversarial Networks', 'FastAPI', 'Docker', "React", "Firebase bucket"],
+        summaryPreview: `
+            <p>Developed a Generative Adversarial Network (GAN) capable of synthesizing handwritten Urdu letters from the MNIST dataset structure, generating realistic characters that respect natural script complexity.</p>
+        `,
+        summaryDetails: `
+            <p>Built an API layer with FastAPI to expose the model for inference and paired it with a React frontend for interactive exploration, letting users pick a letter and immediately view new AI-generated samples.</p>
+            <p>Deployed the stack with Docker and Firebase storage to manage trained weights and generated assets.</p>
+        `,
+        tags: ['PyTorch', 'Generative Adversarial Networks', 'FastAPI', 'Docker', 'React', 'Firebase bucket'],
         repo: 'https://github.com/SyedAhris/folio3GANsFastAPI/',
     },
     {
         name: 'C4lie - AED Cabinet Management Tool',
-        summary: 'I worked on the backend of C4lie, a tool designed to manage AED cabinets, including tracking cabinet locations, linking installers, and handling servicing schedules. Initially, I focused on fixing SonarQube issues while learning Java Spring Boot, and later I proposed and implemented a new categorical S3 storage structure to better organize assets. For example, user images were moved to a more organized path like /user/user_id/profile_pic.png. \nOne of my key contributions was building a notification management system that integrated FCM for Android/iOS push notifications with actionable buttons. I also developed CSV/Excel import/export features using Apache POI and designed REST APIs for time dashboard analytics, which included optimized SQL queries. Additionally, I added multilingual support for all notification content and developed the Guardian Angel module, which utilized STOMP WebSockets for real-time communication, allowing instant alerts and updates.',
-        tags: ['Java', 'Springboot', 'Quartz', 'Apache POI', "AWS S3"],
+        summaryPreview: `
+            <p>Strengthened the backend platform powering AED cabinet management, covering geo-tagged cabinet inventory, installer linkage, and service scheduling while resolving SonarQube issues in a Spring Boot codebase.</p>
+        `,
+        summaryDetails: `
+            <p>Introduced a categorical AWS S3 structure to keep assets traceable—for example, user profile photos moved under <code>/user/{user_id}/profile_pic.png</code>.</p>
+            <ul>
+                <li>Implemented notification orchestration that pairs FCM push messages with actionable buttons for Android and iOS.</li>
+                <li>Added CSV/Excel import-export via Apache POI and optimized analytics queries backing the time dashboard REST APIs.</li>
+                <li>Led multilingual copy support for notifications and delivered the Guardian Angel module with STOMP WebSockets for live alerts.</li>
+            </ul>
+        `,
+        tags: ['Java', 'Springboot', 'Quartz', 'Apache POI', 'AWS S3'],
         // repo: 'https://github.com/SyedAhris',
     },
     {
         name: 'Startup Launchpad',
-        summary: 'Full-stack toolkit that automates landing pages, newsletters, and onboarding for early-stage founders.',
+        summaryPreview: `
+            <p>Full-stack toolkit that automates landing page creation, drip newsletters, and product onboarding for early-stage founders.</p>
+        `,
         tags: ['React', 'Node.js', 'Automation'],
         repo: 'https://github.com/SyedAhris',
     },
@@ -34,7 +60,25 @@ const ProjectsSection = () => {
                 {projects.map((project) => (
                     <article key={project.name} className={styles.card}>
                         <h3 className={styles.title}>{project.name}</h3>
-                        <p className={styles.summary}>{project.summary}</p>
+                        <div className={styles.summary}>
+                            <div
+                                className={styles.summaryPreview}
+                                dangerouslySetInnerHTML={{ __html: project.summaryPreview.trim() }}
+                            />
+                            {project.summaryDetails && (
+                                <details className={styles.expandable}>
+                                    <summary className={styles.toggle}>
+                                        <span className={styles.closedLabel}>View more</span>
+                                        <span className={styles.openLabel}>View less</span>
+                                        <FaChevronDown className={styles.toggleIcon} aria-hidden />
+                                    </summary>
+                                    <div
+                                        className={styles.moreContent}
+                                        dangerouslySetInnerHTML={{ __html: project.summaryDetails.trim() }}
+                                    />
+                                </details>
+                            )}
+                        </div>
                         <div className={styles.tags}>
                             {project.tags.map((tag) => (
                                 <span key={`${project.name}-${tag}`} className={styles.tag}>
