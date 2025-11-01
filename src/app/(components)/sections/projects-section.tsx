@@ -27,13 +27,13 @@ const projects: Project[] = [
         repo: 'https://github.com/SyedAhris/folio3GANsFastAPI/',
     },
     {
-        name: 'C4lie - AED Cabinet Management Tool',
+        name: 'C4life - AED Cabinet Management Tool',
         summaryPreview: `
             <p>Strengthened the backend platform powering AED cabinet management, covering geo-tagged cabinet inventory, installer linkage, and service scheduling while resolving SonarQube issues in a Spring Boot codebase.</p>
         `,
         summaryDetails: `
-            <p>Introduced a categorical AWS S3 structure to keep assets traceable—for example, user profile photos moved under <code>/user/{user_id}/profile_pic.png</code>.</p>
             <ul>
+                <li>Introduced a categorical AWS S3 structure to keep assets traceable—for example, user profile photos moved under <code>/user/{user_id}/profile_pic.png</code>.</li>
                 <li>Implemented notification orchestration that pairs FCM push messages with actionable buttons for Android and iOS.</li>
                 <li>Added CSV/Excel import-export via Apache POI and optimized analytics queries backing the time dashboard REST APIs.</li>
                 <li>Led multilingual copy support for notifications and delivered the Guardian Angel module with STOMP WebSockets for live alerts.</li>
