@@ -37,6 +37,38 @@
     color: #113537;
 }
 
+.employerBadge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #1d403e;
+    font-weight: 500;
+}
+
+.employerPrefix {
+    opacity: 0.65;
+}
+
+.employerLink,
+.employerName {
+    color: #0f2a2a;
+}
+
+.employerLink {
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 1px;
+    border-bottom: 1px dotted rgba(17, 53, 55, 0.4);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.employerLink:hover {
+    border-bottom-color: rgba(17, 53, 55, 0.8);
+    color: #113537;
+}
+
 .summary {
     font-size: 0.95rem;
     color: #396361;
@@ -53,19 +85,6 @@
 
 .summaryPreview {
     position: relative;
-}
-
-.summary ul,
-.summary ol {
-    padding-left: 1.2rem;
-}
-
-.summary li {
-    margin-bottom: 0.4rem;
-}
-
-.summary li:last-child {
-    margin-bottom: 0;
 }
 
 .expandable {
@@ -123,24 +142,38 @@
 }
 
 .moreContent {
-    margin-top: 0.75rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.moreContent :is(p, ul, ol) {
+.detailBlock {
+    font-size: 0.92rem;
+    color: #2f5553;
+    line-height: 1.6;
+}
+
+.detailBlock p {
     margin: 0;
 }
 
-.moreContent ul,
-.moreContent ol {
-    padding-left: 1.2rem;
+.highlightList {
+    margin: 0.25rem 0 0;
+    padding-left: 1.05rem;
+    display: grid;
+    gap: 0.35rem;
+    color: #2f5553;
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
-.moreContent li {
-    margin-bottom: 0.4rem;
+.highlightList li::marker {
+    color: #1b4c4b;
 }
 
-.moreContent li:last-child {
-    margin-bottom: 0;
+.highlightList strong {
+    color: #0f2a2a;
 }
 
 .tags {
