@@ -36,7 +36,7 @@
 }
 
 .heroTitle {
-    color: #113537;
+    color: var(--color-text-primary);
     font-size: clamp(32px, 5vw, 48px);
     font-weight: 500;
     letter-spacing: 2px;
@@ -47,7 +47,7 @@
 }
 
 .heroTagline {
-    color: #0f2f31;
+    color: var(--color-text-strong);
     font-size: clamp(18px, 3vw, 24px);
     font-weight: 500;
     letter-spacing: 1.2px;
@@ -65,7 +65,7 @@
 
 .heroSummary {
     margin-top: 16px;
-    color: #315b5b;
+    color: var(--color-text-tertiary);
     font-size: clamp(15px, 2vw, 18px);
     line-height: 1.6;
     max-width: clamp(320px, 52vw, 600px);
@@ -81,14 +81,14 @@
 }
 
 .heroKeyword {
-    background: rgba(1, 150, 131, 0.12);
-    color: #0f2f31;
+    background: var(--hero-chip-bg);
+    color: var(--hero-chip-text);
     border-radius: 999px;
     padding: 6px 16px;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.02em;
-    box-shadow: 0 4px 12px rgba(1, 150, 131, 0.08);
+    box-shadow: var(--shadow-chip);
 }
 
 .ctaWrapper {
@@ -102,23 +102,23 @@
     padding: 16px 32px;
     border-radius: 20px;
     border: none;
-    background: linear-gradient(135deg, #019683, #39e079);
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+    color: var(--color-text-invert);
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-decoration: none;
-    box-shadow: 0 18px 36px rgba(1, 150, 131, 0.28);
+    box-shadow: var(--shadow-accent);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resumeButton:hover {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 26px 48px rgba(1, 150, 131, 0.32);
+    box-shadow: var(--shadow-accent-hover);
 }
 
 .resumeButton:focus-visible {
-    outline: 2px solid rgba(1, 150, 131, 0.6);
+    outline: 2px solid var(--focus-ring);
     outline-offset: 4px;
 }
 
@@ -127,7 +127,7 @@
 }
 
 .descriptionPrint {
-    color: #113537;
+    color: var(--color-text-primary);
     font-size: clamp(18px, 3vw, 22px);
     font-weight: 500;
     letter-spacing: 1.5px;
@@ -137,7 +137,7 @@
 }
 
 .descriptionOther {
-    color: #113537;
+    color: var(--color-text-primary);
     font-size: clamp(16px, 2.6vw, 20px);
     font-weight: 400;
     letter-spacing: 1px;
@@ -216,12 +216,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    --bubble-primary-bg: #113537;
-    --bubble-accent-one: #39e079;
-    --bubble-accent-two: #019683;
-    --bubble-accent-three: #e9f2f1;
-    --bubble-accent-four: #FAC638;
-    --bubble-accent-five: #359EFF;
+    --bubble-primary-bg: var(--bubble-primary);
 }
 
 .bubbleCluster {
@@ -239,8 +234,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 28px 48px rgba(17, 53, 55, 0.35), inset 0 18px 32px rgba(255, 255, 255, 0.18),
-        inset 0 -20px 34px rgba(0, 0, 0, 0.28);
+    box-shadow: var(--shadow-bubble);
     z-index: 2;
     overflow: hidden;
     animation: bubblePulse 12s ease-in-out infinite;
@@ -251,7 +245,7 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 16px 26px rgba(17, 53, 55, 0.28);
+    box-shadow: var(--shadow-image);
     z-index: 3;
 }
 
@@ -259,8 +253,7 @@
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-    box-shadow: 0 20px 36px rgba(17, 53, 55, 0.16), inset 0 12px 18px rgba(255, 255, 255, 0.38),
-        inset 0 -16px 26px rgba(0, 0, 0, 0.18);
+    box-shadow: var(--shadow-bubble-accent);
     z-index: 1;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;

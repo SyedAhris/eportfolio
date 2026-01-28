@@ -2,7 +2,7 @@
     display: flex;
     gap: 20px;
     align-items: center;
-    background-color: #f2f8fb;
+    background-color: var(--tab-bg);
     padding: 15px;
     border-radius: 10px;
 }
@@ -12,16 +12,16 @@
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
-    background-color: white;
+    background-color: var(--tab-card-bg);
     border-radius: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--tab-shadow);
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .tab:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--tab-shadow-hover);
 }
 
 .icon {

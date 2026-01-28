@@ -1,7 +1,7 @@
-"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sacramento, Montserrat } from 'next/font/google';
+import ThemeToggle from './theme-toggle';
 import styles from './navbar.module.css';
 
 const sacramento = Sacramento({ weight: ['400'], subsets: ['latin'] });
@@ -14,7 +14,11 @@ const navItems = [
     { id: 'contact', label: 'Contact Me' },
 ];
 
-const Navbar = () => {
+type NavbarProps = {
+    initialTheme?: 'light' | 'dark';
+};
+
+const Navbar = ({ initialTheme }: NavbarProps) => {
     return (
         <nav className={styles.navbarLayout}>
             <a href="#home" className={`${styles.name} ${sacramento.className}`}>
@@ -32,6 +36,7 @@ const Navbar = () => {
                 ))}
             </div>
             <div className={styles.socialLinks}>
+                <ThemeToggle initialTheme={initialTheme} />
                 <Link href="https://www.linkedin.com/in/SyedAhris" target="_blank" aria-label="LinkedIn profile">
                     <Image className={styles.socialIcon} src="linkedin.svg" alt="LinkedIn account link" width={40} height={40} />
                 </Link>

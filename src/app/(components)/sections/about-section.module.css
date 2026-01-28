@@ -7,7 +7,7 @@
 
 .heading {
     font-size: clamp(2.4rem, 5vw, 2.9rem);
-    color: #113537;
+    color: var(--color-text-primary);
     text-align: center;
     margin-bottom: 56px;
     font-weight: 500;
@@ -28,7 +28,7 @@
     bottom: 0;
     left: 50%;
     width: 3px;
-    background: linear-gradient(180deg, rgba(17, 53, 55, 0.15), rgba(17, 53, 55, 0.5));
+    background: linear-gradient(180deg, var(--timeline-line-light), var(--timeline-line-strong));
     transform: translateX(-50%);
 }
 
@@ -56,12 +56,12 @@
 }
 
 .card {
-    background-color: #ffffff;
-    border: 1px solid #dbe7e6;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: 20px;
     padding: 28px 32px;
     box-sizing: border-box;
-    box-shadow: 0 24px 40px rgba(17, 53, 55, 0.08);
+    box-shadow: var(--shadow-card);
     width: min(100%, clamp(360px, 42vw, 640px));
     max-width: 640px;
 }
@@ -81,8 +81,8 @@
     font-size: 0.85rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    background: #e9f2f1;
-    color: #1b4c4b;
+    background: var(--color-surface-alt);
+    color: var(--color-text-link);
     padding: 6px 12px;
     border-radius: 999px;
     margin-bottom: 12px;
@@ -92,14 +92,14 @@
 .title {
     font-size: 1.4rem;
     margin: 0 0 6px;
-    color: #113537;
+    color: var(--color-text-primary);
     font-weight: 500;
 }
 
 .subtitle {
     display: block;
     font-size: 0.95rem;
-    color: #396361;
+    color: var(--color-text-secondary);
     font-weight: 500;
     margin-bottom: 18px;
 }
@@ -119,8 +119,8 @@
 }
 
 .highlight {
-    background: rgba(1, 150, 131, 0.1);
-    color: #019683;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
     padding: 6px 12px;
     border-radius: 999px;
     font-size: 0.85rem;
@@ -136,12 +136,12 @@
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background: #019683;
-    color: #ffffff;
+    background: var(--color-accent);
+    color: var(--color-text-invert);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 16px 34px rgba(57, 224, 121, 0.22);
+    box-shadow: var(--shadow-marker);
     z-index: 2;
 }
 

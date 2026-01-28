@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { cookies } from 'next/headers';
 
 import Navbar from '@/app/(components)/navbar';
 
@@ -91,11 +92,14 @@ type RootLayoutProps = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
+    const themeCookie = cookies().get('theme')?.value;
+    const theme = themeCookie === 'dark' || themeCookie === 'light' ? themeCookie : undefined;
+
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" data-theme={theme} suppressHydrationWarning>
             <body className={styles.body}>
                 <div className={styles.rootLayout}>
-                    <Navbar />
+                    <Navbar initialTheme={theme} />
                     <div id="main-content" className={styles.content}>
                         {children}
                     </div>
