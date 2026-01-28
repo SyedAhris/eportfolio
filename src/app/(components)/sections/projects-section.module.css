@@ -1,6 +1,17 @@
 .section {
+    position: relative;
     padding: 80px clamp(24px, 6vw, 120px);
     scroll-margin-top: 120px;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: clamp(24px, 6vw, 120px);
+    right: clamp(24px, 6vw, 120px);
+    height: 1px;
+    background: var(--section-divider);
 }
 
 .heading {

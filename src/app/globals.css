@@ -73,6 +73,7 @@
     --tag-text: #ffffff;
     --hero-chip-bg: rgba(1, 150, 131, 0.12);
     --hero-chip-text: #0f2f31;
+    --section-divider: linear-gradient(90deg, transparent, rgba(1, 150, 131, 0.26), transparent);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -144,6 +145,7 @@
         --tag-text: #e6f5f4;
         --hero-chip-bg: rgba(53, 208, 137, 0.18);
         --hero-chip-text: #d6f0ee;
+        --section-divider: linear-gradient(90deg, transparent, rgba(53, 208, 137, 0.28), transparent);
     }
 }
 
@@ -215,6 +217,7 @@
     --tag-text: #ffffff;
     --hero-chip-bg: rgba(1, 150, 131, 0.12);
     --hero-chip-text: #0f2f31;
+    --section-divider: linear-gradient(90deg, transparent, rgba(1, 150, 131, 0.26), transparent);
 }
 
 [data-theme='dark'] {
@@ -285,6 +288,7 @@
     --tag-text: #e6f5f4;
     --hero-chip-bg: rgba(53, 208, 137, 0.18);
     --hero-chip-text: #d6f0ee;
+    --section-divider: linear-gradient(90deg, transparent, rgba(53, 208, 137, 0.28), transparent);
 }
 
 html {
