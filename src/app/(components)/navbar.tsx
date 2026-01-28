@@ -37,11 +37,21 @@ const Navbar = ({ initialTheme }: NavbarProps) => {
             </div>
             <div className={styles.socialLinks}>
                 <ThemeToggle initialTheme={initialTheme} />
-                <Link href="https://www.linkedin.com/in/SyedAhris" target="_blank" aria-label="LinkedIn profile">
-                    <Image className={styles.socialIcon} src="linkedin.svg" alt="LinkedIn account link" width={40} height={40} />
+                <Link
+                    className={styles.socialLink}
+                    href="https://www.linkedin.com/in/SyedAhris"
+                    target="_blank"
+                    aria-label="LinkedIn profile"
+                >
+                    <Image className={styles.socialIcon} src="linkedin.svg" alt="LinkedIn account link" width={20} height={20} />
                 </Link>
-                <Link href="https://www.github.com/SyedAhris" target="_blank" aria-label="GitHub profile">
-                    <Image className={styles.socialIcon} src="github.svg" alt="GitHub account link" width={42} height={42} />
+                <Link
+                    className={styles.socialLink}
+                    href="https://www.github.com/SyedAhris"
+                    target="_blank"
+                    aria-label="GitHub profile"
+                >
+                    <Image className={styles.socialIcon} src="github.svg" alt="GitHub account link" width={20} height={20} />
                 </Link>
             </div>
         </nav>

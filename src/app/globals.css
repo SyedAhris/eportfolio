@@ -43,6 +43,7 @@
     --shadow-accent: 0 18px 36px rgba(1, 150, 131, 0.28);
     --shadow-accent-hover: 0 26px 48px rgba(1, 150, 131, 0.32);
     --shadow-card: 0 24px 40px rgba(17, 53, 55, 0.08);
+    --shadow-card-hover: 0 28px 52px rgba(1, 150, 131, 0.2106);
     --shadow-card-strong: 0 28px 70px rgba(6, 22, 21, 0.25);
     --shadow-bubble: 0 28px 48px rgba(17, 53, 55, 0.35), inset 0 18px 32px rgba(255, 255, 255, 0.18),
         inset 0 -20px 34px rgba(0, 0, 0, 0.28);
@@ -115,6 +116,7 @@
         --shadow-accent: 0 18px 36px rgba(0, 0, 0, 0.35);
         --shadow-accent-hover: 0 26px 48px rgba(0, 0, 0, 0.45);
         --shadow-card: 0 24px 40px rgba(0, 0, 0, 0.35);
+        --shadow-card-hover: 0 28px 52px rgba(53, 208, 137, 0.22);
         --shadow-card-strong: 0 28px 70px rgba(0, 0, 0, 0.55);
         --shadow-bubble: 0 28px 48px rgba(0, 0, 0, 0.45), inset 0 18px 32px rgba(255, 255, 255, 0.08),
             inset 0 -20px 34px rgba(0, 0, 0, 0.4);
@@ -187,6 +189,7 @@
     --shadow-accent: 0 18px 36px rgba(1, 150, 131, 0.28);
     --shadow-accent-hover: 0 26px 48px rgba(1, 150, 131, 0.32);
     --shadow-card: 0 24px 40px rgba(17, 53, 55, 0.08);
+    --shadow-card-hover: 0 28px 52px rgba(1, 150, 131, 0.2106);
     --shadow-card-strong: 0 28px 70px rgba(6, 22, 21, 0.25);
     --shadow-bubble: 0 28px 48px rgba(17, 53, 55, 0.35), inset 0 18px 32px rgba(255, 255, 255, 0.18),
         inset 0 -20px 34px rgba(0, 0, 0, 0.28);
@@ -258,6 +261,7 @@
     --shadow-accent: 0 18px 36px rgba(0, 0, 0, 0.35);
     --shadow-accent-hover: 0 26px 48px rgba(0, 0, 0, 0.45);
     --shadow-card: 0 24px 40px rgba(0, 0, 0, 0.35);
+    --shadow-card-hover: 0 28px 52px rgba(53, 208, 137, 0.22);
     --shadow-card-strong: 0 28px 70px rgba(0, 0, 0, 0.55);
     --shadow-bubble: 0 28px 48px rgba(0, 0, 0, 0.45), inset 0 18px 32px rgba(255, 255, 255, 0.08),
         inset 0 -20px 34px rgba(0, 0, 0, 0.4);

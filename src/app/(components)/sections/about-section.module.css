@@ -75,6 +75,13 @@
     box-shadow: var(--shadow-card);
     width: min(100%, clamp(360px, 42vw, 640px));
     max-width: 640px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--color-accent-muted);
+    transform: translateY(-2px);
 }
 
 .timelineItemLeft .card {
@@ -154,6 +161,19 @@
     justify-content: center;
     box-shadow: var(--shadow-marker);
     z-index: 2;
+}
+
+.marker::after {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(1, 150, 131, 0.22), transparent 70%);
+    z-index: -1;
+}
+
+[data-theme='dark'] .marker::after {
+    background: radial-gradient(circle, rgba(53, 208, 137, 0.3), transparent 70%);
 }
 
 .timelineItemLeft .marker {

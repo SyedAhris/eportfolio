@@ -63,6 +63,10 @@
     color: var(--color-accent-dark);
 }
 
+[data-theme='dark'] .link:hover {
+    color: var(--color-text-link-strong);
+}
+
 .socialLinks {
     display: flex;
     align-items: center;
@@ -73,8 +77,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 999px;
     border: 1px solid var(--color-border-strong);
     background: var(--color-surface);
@@ -106,15 +110,33 @@
 }
 
 .socialIcon {
-    width: 42px;
-    height: 42px;
+    width: 20px;
+    height: 20px;
     transition: transform 0.3s ease;
     filter: var(--social-icon-filter);
 }
 
-.socialIcon:hover {
+.socialLink {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-strong);
+    background: var(--color-surface);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.socialLink:hover {
     cursor: pointer;
     transform: scale(1.1);
+    border-color: var(--color-border-dotted-strong);
+}
+
+.socialLink:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
 }
 
 @media (max-width: 900px) {
