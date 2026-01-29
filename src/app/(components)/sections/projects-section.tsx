@@ -19,6 +19,7 @@ type Project = {
     highlights?: ReactNode[];
     tags: string[];
     repo?: string;
+    liveUrl?: string;
     employer?: Employer;
 };
 
@@ -132,6 +133,8 @@ const projects: Project[] = [
         //     name: 'Syed Ahris',
         //     url: 'https://github.com/SyedAhris/docrag-demo',
         // },
+        repo: 'https://github.com/SyedAhris/docrag-demo',
+        liveUrl: 'https://docrag-demo-gxc.vercel.app',
         summaryPreview: (
             <p>
                 Built a full-stack RAG demo with document ingestion, sessioned chat, streaming responses, and security
@@ -256,11 +259,18 @@ const ProjectsSection = () => {
                                         </span>
                                     ))}
                                 </div>
-                                {project.repo && (
+                                {(project.repo || project.liveUrl) && (
                                     <div className={styles.links}>
-                                        <Link className={styles.link} href={project.repo} target="_blank" rel="noreferrer">
-                                            View on GitHub <FaArrowRight />
-                                        </Link>
+                                        {project.liveUrl && (
+                                            <Link className={styles.link} href={project.liveUrl} target="_blank" rel="noreferrer">
+                                                View project <FaArrowRight />
+                                            </Link>
+                                        )}
+                                        {project.repo && (
+                                            <Link className={styles.link} href={project.repo} target="_blank" rel="noreferrer">
+                                                View on GitHub <FaArrowRight />
+                                            </Link>
+                                        )}
                                     </div>
                                 )}
                             </article>
@@ -326,15 +336,29 @@ const ProjectsSection = () => {
                                         </ul>
                                     </div>
                                 )}
-                                {activeProject.repo && (
-                                    <Link
-                                        className={styles.modalLink}
-                                        href={activeProject.repo}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        View on GitHub <FaArrowRight />
-                                    </Link>
+                                {(activeProject.repo || activeProject.liveUrl) && (
+                                    <div className={styles.modalLinks}>
+                                        {activeProject.liveUrl && (
+                                            <Link
+                                                className={styles.modalLink}
+                                                href={activeProject.liveUrl}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                View project <FaArrowRight />
+                                            </Link>
+                                        )}
+                                        {activeProject.repo && (
+                                            <Link
+                                                className={styles.modalLink}
+                                                href={activeProject.repo}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                View on GitHub <FaArrowRight />
+                                            </Link>
+                                        )}
+                                    </div>
                                 )}
                             </div>
                         </div>

@@ -293,6 +293,12 @@
     transform: translateY(-1px);
 }
 
+.modalLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
 .tags {
     display: flex;
     flex-wrap: wrap;
