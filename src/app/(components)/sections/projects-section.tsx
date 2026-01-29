@@ -125,7 +125,52 @@ const projects: Project[] = [
             </>,
         ],
         tags: ['Healthcare', 'AI Copilot', 'LangGraph', 'RAG', 'DevOps'],
-    }
+    },
+    {
+        name: 'DocRAG Demo — RAG Ingestion & Chat Platform',
+        // employer: {
+        //     name: 'Syed Ahris',
+        //     url: 'https://github.com/SyedAhris/docrag-demo',
+        // },
+        summaryPreview: (
+            <p>
+                Built a full-stack RAG demo with document ingestion, sessioned chat, streaming responses, and security
+                controls—paired with a bold black/yellow UI and operational tooling for deployment.
+            </p>
+        ),
+        highlights: [
+            <>
+                <strong>Ingestion + retrieval:</strong> Implemented file/text ingestion with chunking, Qdrant storage, and
+                doc/session flows across <code>/ingest</code> and <code>/chat</code> APIs.
+            </>,
+            <>
+                <strong>Streaming chat:</strong> Added SSE streaming with session persistence and markdown-rendered assistant
+                messages.
+            </>,
+            <>
+                <strong>Session restore:</strong> Persisted sessions for 6 hours and added backend APIs to restore chat
+                history plus original file download via GridFS.
+            </>,
+            <>
+                <strong>Security hardening:</strong> Added demo token auth, captcha verification (Turnstile/hCaptcha),
+                payload limits, and IP-based rate limiting.
+            </>,
+            <>
+                <strong>Production readiness:</strong> Added Render keep-alive GitHub Action and frontend env config for
+                per-environment backend URLs.
+            </>,
+        ],
+        tags: [
+            'FastAPI',
+            'Next.js',
+            'MongoDB',
+            'Qdrant',
+            'SSE',
+            'Turnstile',
+            'Rate Limiting',
+            'TypeScript',
+        ],
+    },
 
 ];
 
