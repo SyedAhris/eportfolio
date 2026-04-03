@@ -1,7 +1,7 @@
+import Eyes from '@/app/(components)/eyes';
 import AboutSection from '@/app/(components)/sections/about-section';
 import ContactSection from '@/app/(components)/sections/contact-section';
 import ProjectsSection from '@/app/(components)/sections/projects-section';
-import Eyes from '@/app/(components)/eyes';
 import { Roboto_Mono } from 'next/font/google';
 import Image from 'next/image';
 import Script from 'next/script';
