@@ -1,31 +1,42 @@
-# Repository Guidelines
+# Project Guidelines
 
-## Project Structure & Module Organization
-- Next.js App Router pages live in `src/app`; the landing page is `src/app/page.tsx` with shared styles in `src/app/home.module.css`.
-- Reusable UI sits under `src/app/(components)` paired with matching CSS modules (e.g., `navbar.tsx` + `navbar.module.css`).
-- Route groups for `about`, `contact`, and `projects` live in `src/app/(pages)` and share scaffolding via `layout.tsx` and `rootLayout.module.css`.
-- Global tokens belong in `src/app/globals.css`; static assets go in `public` and are referenced with `/asset-name` paths.
-- New config or media files should live alongside related modules and leverage `@/` alias imports for anything in `src`.
+## Code Style
+- Next.js App Router in `src/app`: home page in `src/app/page.tsx`, route groups in `src/app/(pages)`.
+- Reusable components in `src/app/(components)` with co-located CSS modules (`tabs/tabs.tsx` + `tabs/tabs.module.css`, `navbar.tsx` + `navbar.module.css`).
+- Use `@/` absolute imports for local modules (example: `@/app/(components)/theme-toggle`).
+- TypeScript React: 4-space indentation, PascalCase components, camelCase hooks/vars, kebab-case folder names, CSS module class names camelCase.
 
-## Build, Test, and Development Commands
-- `npm run dev` — start the Next.js dev server at http://localhost:3000 with hot reload.
-- `npm run build` — generate the optimized production bundle; run before sharing changes.
-- `npm run start` — serve the built bundle to validate production behavior locally.
-- `npm run lint` — run ESLint with the Next.js ruleset; resolve or document any warnings.
+## Architecture
+- Single-page portfolio style app: sections for About, Projects, Contact in `src/app/(components)/sections`.
+- Global layout in `src/app/layout.tsx`, root styling in `src/app/rootLayout.module.css`, global styles in `src/app/globals.css`.
+- Static assets under `public/`, referenced with root paths (e.g., `/image.png`).
 
-## Coding Style & Naming Conventions
-- Author TypeScript React components with 4-space indentation and keep import ordering consistent with existing files.
-- Use PascalCase for components, camelCase for hooks and variables, and kebab-case for directories unless driven by route names.
-- Scope styles with CSS modules using camelCase class names (e.g., `.heroWrapper`), and prefer absolute imports via `@/`.
+## Build and Test
+- `npm install`
+- `npm run dev` (local dev server, hot reload)
+- `npm run build` (production build)
+- `npm run start` (serve built bundle)
+- `npm run lint` (ESLint checks)
+- No tests currently in repo; for new tests prefer `__tests__/Component.test.tsx` naming.
 
-## Testing Guidelines
-- Automated tests are not yet configured; rely on `npm run lint` and manual verification in dev mode.
-- When adding tests, follow the `__tests__/Component.test.tsx` pattern and document expected coverage in the PR.
+## Project Conventions
+- Vibe: minimal modern portfolio with animated sections, clearly segmented component modules.
+- Component props are small and explicit; prefer simple presentational logic in components, no heavy global state.
+- Keep styling in CSS modules and avoid global side effects; update existing patterns in `src/app/(components)/sections/*`.
 
-## Commit & Pull Request Guidelines
-- Write concise, imperative commit subjects (e.g., `fix(nav): align active state`) and group related changes.
-- PRs should summarize user-facing impact, list completed validation (`npm run lint`, `npm run build`), attach screenshots or GIFs for UI shifts, and link related issues.
+## Integration Points
+- No external backend API in codebase; likely pure static content. If adding data fetch, use Next.js server components and `fetch` or client-side hooks in a minimal way.
+- Animation and theme toggling are in `src/app/(components)/theme-toggle.tsx` and `src/app/(components)/eyes.tsx`.
 
-## Security & Configuration Tips
-- Keep secrets out of source control; load sensitive values from `.env.local`.
-- Vet new dependencies and run `npm audit` after upgrades or dependency additions.
+## Security
+- Store env secrets in `.env.local` only; do not commit secrets.
+- Audit dependencies occasionally with `npm audit`.
+
+---
+
+### Agent workflow notes
+- Plan edits from top-down: layout -> sections -> components.
+- Preserve existing file structure and style patterns.
+- Validate with `npm run lint` and `npm run build` before finalizing.
+
+> If any section is missing context or you would like a specific pattern documented (e.g., theming, animation timing, component naming), say so and I’ll update this doc.
