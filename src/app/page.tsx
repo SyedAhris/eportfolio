@@ -154,6 +154,24 @@ const Home = () => {
                             <div className={`${styles.bubbleAccent} ${styles.bubbleAccentFive}`}>
                                 <Eyes />
                             </div>
+                            <div className={`${styles.bubbleAccent} ${styles.bubbleAWS}`}>
+                                <a
+                                    href="https://www.credly.com/badges/e106bd44-d889-4dfc-b210-ace3bac4351f/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.certLinkBubble}
+                                    aria-label="AWS Certified Solutions Architect - Associate Credly badge"
+                                >
+                                    <Image
+                                        src="/aws-saa.png"
+                                        alt="AWS Solutions Architect Associate badge"
+                                        width={140}
+                                        height={140}
+                                        className={styles.certLogoImage}
+                                    />
+                                    <span className={styles.certText}>AWS SAA</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

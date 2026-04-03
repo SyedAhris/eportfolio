@@ -1,6 +1,6 @@
 import { Montserrat, Sacramento } from 'next/font/google';
 import type { CSSProperties } from 'react';
-import { FaBookOpen, FaBriefcase, FaSchool, FaUniversity } from 'react-icons/fa';
+import { FaAward, FaBookOpen, FaBriefcase, FaSchool, FaUniversity } from 'react-icons/fa';
 import styles from './about-section.module.css';
 
 const montserrat = Montserrat({
@@ -46,6 +46,14 @@ const milestones = [
         highlights: ['Java Springboot', 'Python FastAPI', 'Docker', 'Redis', 'AWS', 'rabbit mq', 'Node.js Express', 'Github Actions'],
         icon: <FaBriefcase />,
     },
+    {
+        year: '2026',
+        title: 'AWS Certified Solutions Architect – Associate',
+        subtitle: 'SAA-C03',
+        highlights: ['Designed scalable AWS architecture', 'VPC, IAM, EKS, RDS security best practices', 'Credly badge verified'],
+        icon: <FaAward />,
+        link: 'https://www.credly.com/badges/e106bd44-d889-4dfc-b210-ace3bac4351f/',
+    },
 ];
 
 const AboutSection = () => {
@@ -69,6 +77,16 @@ const AboutSection = () => {
                                 <span className={styles.year}>{milestone.year}</span>
                                 <h3 className={styles.title}>{milestone.title}</h3>
                                 <span className={styles.subtitle}>{milestone.subtitle}</span>
+                                {milestone.link && (
+                                    <a
+                                        className={styles.certLink}
+                                        href={milestone.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View credential on Credly
+                                    </a>
+                                )}
                                 <div className={styles.highlights}>
                                     {milestone.highlights.map((highlight, highlightIndex) => (
                                         <span
