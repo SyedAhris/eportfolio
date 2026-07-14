@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { cookies } from 'next/headers';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import Navbar from '@/app/(components)/navbar';
 
@@ -104,6 +105,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                         {children}
                     </div>
                 </div>
+                <SpeedInsights />
             </body>
         </html>
     );
